@@ -6,8 +6,9 @@ Embedded-CAN-ISOTP is an embedded implementation of the Transport protocol and n
 The framework for implementing CAN TP (Controller Area Network Transport Protocol) in the Embedded-CAN-ISOTP project is structured as follows:
 
 <div style="text-align: center;">
-  <img src="./docs/cantp_framework.jpg" alt="Image Description" width="500">
+  <img src="./docs/cantp_framework.jpg">
 </div>
+
 - Application Layer: This layer is where the application interacts with the transport protocol. It is responsible for initiating and managing the communication sessions.
 
 - Transport Layer: The ISO-TP (ISO Transport Protocol) is implemented at this layer. It adheres to the ISO15765-2 standard and provides the necessary transport services for CAN and CAN FD networks.
