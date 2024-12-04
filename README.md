@@ -14,10 +14,11 @@ The framework for implementing CAN TP (Controller Area Network Transport Protoco
 - Application Layer: This layer is where the application interacts with the transport protocol. It is responsible for initiating and managing the communication sessions.
 - Transport Layer: The ISO-TP (ISO Transport Protocol) is implemented at this layer. It adheres to the ISO15765-2 standard and provides the necessary transport services for CAN and CAN FD networks. Specific introduction please refer to [Introduction of CAN TP](./CAN_ISO15765.md)
 - Portable Layer: This layer provides a set of APIs (Application Programming Interfaces) for the transport protocol. It includes functions for opening, reading, writing, and controlling the CAN hardware. This layer is designed to be portable across different RTOS (Real-Time Operating Systems) and MCU (Microcontroller Unit) platforms.
-- CAN Hardware: This layer represents the physical CAN hardware, which is responsible for transmitting and receiving data over the CAN bus.
+- CAN Hardware: This layer represents the physical CAN hardware, which is responsible for transmitting and receiving data over the CAN bus. Specifically, it should support CANFD. [introduction of CANFD](./introduction_CANFD.md)
 - Platform: This layer includes the RTOS (Real-Time Operating Systems) and MCU (Microcontroller Unit) platforms. The project supports various RTOS platforms such as FreeRTOS, ThreadX, and Zephyr.
 
 ### ISO design
+
 <div style="text-align: center;">
   <img src="./docs/image.png">
 </div>
@@ -26,9 +27,9 @@ The framework for implementing CAN TP (Controller Area Network Transport Protoco
 This project is inspired by below projects.
 
 1. **[openxc/isotp-c](https://github.com/openxc/isotp-c)** /**[lishen/isotp-c](https://github.com/lishen2/isotp-c)**
-  -> Only support CAN CLASSIC
+    -> Only support CAN CLASSIC
 2. **[lishen/can-isotp](https://github.com/hartkopp/can-isotp)**
-  -> implementation on linux kernrl 
+    -> implementation on linux kernrl 
 
 ## Highlight Features of this project
   - **ISO-TP (ISO Transport Protocol) Implementation**: This project implements the ISO15765-2 standard, ensuring compatibility and standardization.
