@@ -26,8 +26,46 @@ The framework for implementing CAN TP (Controller Area Network Transport Protoco
 This project is inspired by below projects.
 
 1. **[openxc/isotp-c](https://github.com/openxc/isotp-c)** /**[lishen/isotp-c](https://github.com/lishen2/isotp-c)**
+  -> Only support CAN CLASSIC
 2. **[lishen/can-isotp](https://github.com/hartkopp/can-isotp)**
-## Highlight Features
+  -> implementation on linux kernrl 
+
+## Highlight Features of this project
   - **ISO-TP (ISO Transport Protocol) Implementation**: This project implements the ISO15765-2 standard, ensuring compatibility and standardization.
   - **Support CAN and CAN FD**: The project not only supports traditional CAN TP, but also CAN FD TP to meet different communication needs.
   - **Portable layer**: Provides a set of APIs for easy porting and integration on different RTOS and MCU platforms.
+
+## Test environemnt
+
+<div style="text-align: center;">
+  <img src="./docs/test_environment.jpg">
+</div>
+
+### Testcases
+- Single frame transmission test:
+Send a data frame of less than 8(CAN) or 64(CANFD) bytes.
+Verify whether the receiving end has correctly received the data.
+
+- Multi frame transmission test:
+Sending a data frame larger than 8(CAN) or 64(CANFD) bytes requires splitting it into multiple CAN data frames for transmission.
+Verify that the receiving end has correctly received all data frames and is able to combine them into complete data.
+
+- Flow control testing:
+Simulate that the sending end sends data faster than the receiving end processes data.
+Verify whether the receiving end can correctly request the sending end to slow down the sending speed, and notify the sending end to continue sending after the receiving ability is restored.
+
+- Error handling test:
+Simulate the sender sending incorrect frame formats or incorrect flow control frames.
+Verify whether the receiving end can handle these errors correctly and take corresponding error recovery measures.
+
+- Performance testing:
+Test the performance of ISOTP under different loads.
+Measure indicators such as throughput, latency, and error rate for data transmission.
+
+- Robustness testing:
+Simulate various abnormal situations, such as bus interference, node failures, etc.
+Verify whether the ISOTP protocol can maintain stable operation under these abnormal conditions.
+
+- Compatibility testing:
+Test the compatibility of ISOTP protocol with ECUs or devices from different manufacturers.
+Verify whether the sender and receiver can interact correctly, regardless of the hardware or software implementation used.
