@@ -1,4 +1,4 @@
-# Embedded-CAN-ISOTP
+# CAN-ISOTP based on ISO-15765-2-2016
 
 ## Introduction
 
