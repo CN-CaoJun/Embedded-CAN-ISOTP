@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "can.h": "c",
+        "isotp.h": "c",
+        "assert.h": "c"
+    }
+}
