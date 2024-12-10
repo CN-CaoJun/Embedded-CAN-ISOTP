@@ -39,8 +39,8 @@ This project is inspired by below projects.
 <div style="text-align: center;">
   <img src="./docs/test_environment.jpg">
 </div>
-
 ### Testcases
+
 - Single frame transmission test:
 Send a data frame of less than 8(CAN) or 64(CANFD) bytes.
 Verify whether the receiving end has correctly received the data.
@@ -68,3 +68,40 @@ Verify whether the ISOTP protocol can maintain stable operation under these abno
 - Compatibility testing:
 Test the compatibility of ISOTP protocol with ECUs or devices from different manufacturers.
 Verify whether the sender and receiver can interact correctly, regardless of the hardware or software implementation used.
+
+### Test Results
+
+`step 1` - setup vcan0
+
+```shell
+./setup_vcan.sh
+```
+
+![image-20241210185128452](./${pics}/image-20241210185128452.png) 
+
+`step 2` - monitor vcan 0
+
+```
+(base) ➜  ~ candump -tz vcan0
+```
+
+`step 3` - start a iso-tp tester
+
+plz refer [isotp_client_soketcan.py](https://github.com/CN-CaoJun/Vehicle-communication-tester-set/blob/main/isotp-can-tester-nogui/isotp_client_soketcan.py)
+
+`step 4` - build and run example
+
+```
+mkdir build 
+cd build
+cmake .. -G "Unix Makefiles"
+make 
+./isotp_server
+```
+
+`step 5` - tester send and see the trace
+
+**Tester** send 100 bytes and after example received , it send 100 bytes as well
+
+![image-20241210185943598](./${pics}/image-20241210185943598.png) 
+
