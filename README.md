@@ -5,6 +5,7 @@
 Embedded-CAN-ISOTP is an embedded implementation of the Transport protocol and network layer services. It is primarily designed for use with RTOS (Real-Time Operating Systems) and provides a portable layer for easy integration. The ISO-TP (ISO Transport Protocol) implemented in this project adheres to the ISO15765-2 standard, ensuring compatibility and standardization. Additionally, the project supports both CAN TP (Controller Area Network Transport Protocol) and CAN FD TP (Controller Area Network with Flexible Data-Rate Transport Protocol), catering to different communication requirements within automotive and embedded systems.
 
 ## Framework
+
 ### Project desin
 The framework for implementing CAN TP (Controller Area Network Transport Protocol) in the Embedded-CAN-ISOTP project is structured as follows:
 <div style="text-align: center;">
@@ -103,7 +104,12 @@ make
 
 `step 5` - tester send and see the trace
 
-**Tester** send 100 bytes and after example received , it send 100 bytes as well
+**Tester** send 12 bytes and after example received , it send 16 bytes for response
 
-![image-20241210185943598](./${pics}/image-20241210185943598.png) 
+![image-20241210190803248](./${pics}/image-20241210190803248.png) 
 
+
+
+### TBD
+
+Need to support CAN FD whose length of SF is 64 bytes
